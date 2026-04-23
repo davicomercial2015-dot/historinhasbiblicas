@@ -5,8 +5,7 @@ import {
   Clock, 
   ShieldCheck, 
   ChevronDown, 
-  ChevronLeft,
-  ChevronRight,
+
   CheckCircle2, 
   Smartphone, 
   Sparkles, 
@@ -22,7 +21,7 @@ import {
   Check,
   Shield
 } from "lucide-react";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 
 // --- Componentes Base ---
 const SectionHeading = ({ title, subtitle, light = false }: { title: React.ReactNode, subtitle?: string, light?: boolean }) => (
