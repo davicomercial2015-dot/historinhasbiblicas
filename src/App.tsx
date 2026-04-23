@@ -448,9 +448,9 @@ const OfferSection = () => {
           subtitle="Tudo pronto para você ensinar valores bíblicos com leveza, mesmo sem experiência e sem perder tempo."
         />
         
-        <div className="bg-white rounded-[3rem] shadow-2xl border-4 border-slate-100 overflow-hidden relative">
+        <div className="bg-white rounded-3xl md:rounded-[3rem] shadow-2xl border-2 md:border-4 border-slate-100 overflow-hidden relative">
           <div className="absolute top-0 left-0 w-full h-2 bg-orange-500" />
-          <div className="p-8 md:p-12 md:pb-8 flex flex-col md:flex-row gap-8 items-center">
+          <div className="p-5 sm:p-8 md:p-12 md:pb-8 flex flex-col md:flex-row gap-6 md:gap-8 items-center">
             
             {/* Imagem + Inclusão */}
             <div className="flex-1 w-full flex flex-col items-center">
@@ -479,7 +479,7 @@ const OfferSection = () => {
             </div>
 
             {/* Price Box */}
-            <div className="flex-1 bg-[#FAFAF7] p-8 md:p-10 rounded-[2.5rem] border-2 border-orange-100 text-center w-full shadow-lg relative overflow-hidden">
+            <div className="flex-1 bg-[#FAFAF7] p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-[2.5rem] border-2 border-orange-100 text-center w-full shadow-lg relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none" />
               
               <p className="text-slate-500 font-bold mb-2">Valor do investimento</p>
@@ -488,9 +488,9 @@ const OfferSection = () => {
                 <span className="text-xl font-black">Por apenas</span>
               </div>
               <div className="flex justify-center items-start text-green-500 mb-6">
-                <span className="text-3xl font-black mt-2">R$</span>
-                <span className="text-[5rem] font-black leading-none tracking-tighter">19</span>
-                <span className="text-3xl font-black mt-2">,90</span>
+                <span className="text-2xl md:text-3xl font-black mt-1 md:mt-2">R$</span>
+                <span className="text-[4rem] md:text-[5rem] font-black leading-none tracking-tighter">19</span>
+                <span className="text-2xl md:text-3xl font-black mt-1 md:mt-2">,90</span>
               </div>
               <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mb-8">Pagamento único • Acesso vitalício</p>
               
