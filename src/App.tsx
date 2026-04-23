@@ -17,7 +17,6 @@ import {
   Image as ImageIcon,
   MessageSquare,
   Lock,
-  Search,
   Check,
   Shield
 } from "lucide-react";
