@@ -238,7 +238,13 @@ const FullSizeCarousel = () => {
   ];
 
   return (
-    <section className="py-16 bg-[#FAFAF7] overflow-hidden">
+    <section className="py-24 bg-[#FAFAF7] overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 mb-12 md:mb-16">
+        <SectionHeading 
+          title="Visual criado para prender a atenção em segundos" 
+          subtitle="Ilustrações encantadoras e linguagem simples que competem de frente com as telas e trazem a Bíblia para a realidade do seu filho."
+        />
+      </div>
       <div className="flex overflow-hidden relative w-full">
         {/* Sombras nas laterais para dar o efeito de entrada/saída (opcional) */}
         <div className="absolute left-0 top-0 bottom-0 w-8 md:w-32 bg-gradient-to-r from-[#FAFAF7] to-transparent z-10 pointer-events-none" />
