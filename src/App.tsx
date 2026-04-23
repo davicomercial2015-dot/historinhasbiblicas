@@ -226,36 +226,40 @@ const Deliverables = () => {
   );
 };
 
-// --- 4. PainPoints (Dores) ---
-const PainPoints = () => {
-  const cards = [
-    { title: "Coração inquieto", text: "Você sabe que deveria ensinar mais sobre Deus ao seu filho, mas o dia termina e isso acaba ficando para depois." },
-    { title: "Distância silenciosa", text: "As telas ocupam espaço demais, e você sente falta de momentos mais profundos e reais dentro de casa." },
-    { title: "Falta de caminho", text: "Você quer ensinar a Bíblia, mas sente que falta material, didática ou uma forma leve de prender a atenção dele." },
-    { title: "Amanhã incerto", text: "O medo de ver seu filho crescer sem princípios bíblicos fortes pesa no seu coração." },
+// --- 4. Full Size Carousel (No lugar das Dores) ---
+const FullSizeCarousel = () => {
+  const images = [
+    "https://i.pinimg.com/736x/d7/7e/49/d77e49da53f4dd533aaffd031200df2e.jpg",
+    "https://i.pinimg.com/736x/17/be/59/17be5933394073d17dcfa599dccb9abf.jpg",
+    "https://i.pinimg.com/736x/03/8b/a8/038ba8c2621bbd48dd104eb40c763387.jpg",
+    "https://i.pinimg.com/736x/62/ee/02/62ee02d345e1ca2f14b7d032833df6b2.jpg",
+    "https://i.pinimg.com/736x/6e/75/0b/6e750bcc226f839f04c54ef673a1f008.jpg",
+    "https://i.pinimg.com/736x/5a/71/01/5a71014b1d0e638d85a86c5be2274174.jpg",
+    "https://i.pinimg.com/736x/bd/4b/b3/bd4bb3f711aa992d27128bb8c151784d.jpg"
   ];
 
   return (
-    <section className="py-24 bg-[#FAFAF7]">
-      <div className="max-w-6xl mx-auto px-4">
-        <SectionHeading 
-          title="Você sente que a formação espiritual do seu filho está ficando para depois?" 
-          subtitle="Entre o cansaço, a correria e as telas, muitos pais cristãos carregam esse peso em silêncio."
-        />
-        
-        <div className="grid md:grid-cols-2 gap-6">
-          {cards.map((card, i) => (
-            <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex gap-6 items-start">
-              <div className="w-12 h-12 bg-slate-50 text-slate-400 rounded-2xl flex items-center justify-center shrink-0 border border-slate-100">
-                <Search className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-slate-800 mb-2">{card.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{card.text}</p>
-              </div>
-            </div>
+    <section className="py-16 bg-[#FAFAF7] overflow-hidden">
+      <div className="flex overflow-hidden relative w-full">
+        {/* Sombras nas laterais para dar o efeito de entrada/saída (opcional) */}
+        <div className="absolute left-0 top-0 bottom-0 w-8 md:w-32 bg-gradient-to-r from-[#FAFAF7] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 md:w-32 bg-gradient-to-l from-[#FAFAF7] to-transparent z-10 pointer-events-none" />
+
+        <motion.div
+          className="flex gap-4 md:gap-8 min-w-max px-4 py-4 items-center"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ ease: "linear", duration: 45, repeat: Infinity }}
+        >
+          {[...images, ...images].map((img, i) => (
+            <img 
+              key={i} 
+              src={img} 
+              alt="Conteúdo em tamanho real" 
+              className="w-[85vw] md:w-auto h-auto md:max-h-[85vh] max-w-none shrink-0 rounded-2xl shadow-xl border border-slate-200" 
+              referrerPolicy="no-referrer"
+            />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -613,7 +617,7 @@ export default function App() {
       <Hero />
       <PreviewCarousel />
       <Deliverables />
-      <PainPoints />
+      <FullSizeCarousel />
       <HowItWorks />
       <Features />
       <Transformation />
