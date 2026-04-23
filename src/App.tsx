@@ -377,10 +377,10 @@ const Transformation = () => {
 // --- 8. Bonus ---
 const Bonus = () => {
   const bonuses = [
-    { title: "Desenhos Bíblicos para Colorir", text: "Mais envolvimento e criatividade enquanto aprende.", img: "https://i.pinimg.com/736x/af/70/b3/af70b37bb79dda24ec11496391e9c167.jpg" },
-    { title: "Guia de Leitura em Família", text: "Ajuda prática para conduzir esse momento com segurança.", img: "https://i.pinimg.com/736x/00/82/b2/0082b27088df4a1a15aa3273854dadea.jpg" },
-    { title: "Certificado de Estudante Bíblico", text: "Orgulho, incentivo e recompensa para a criança.", img: "https://i.pinimg.com/736x/ed/00/af/ed00afed8dc5f9ea583f15b7797f09a7.jpg" },
-    { title: "Grupo VIP de Suporte", text: "Troca de experiências com outros pais cristãos.", img: "https://i.pinimg.com/736x/29/0a/04/290a0442e95e30109e59e0a913663af1.jpg" },
+    { title: "Desenhos Bíblicos para Colorir", text: "Mais envolvimento e criatividade enquanto aprende.", img: "https://i.pinimg.com/736x/af/70/b3/af70b37bb79dda24ec11496391e9c167.jpg", oldPrice: "R$ 29,90" },
+    { title: "Guia de Leitura em Família", text: "Ajuda prática para conduzir esse momento com segurança.", img: "https://i.pinimg.com/736x/00/82/b2/0082b27088df4a1a15aa3273854dadea.jpg", oldPrice: "R$ 47,00" },
+    { title: "Certificado de Estudante Bíblico", text: "Orgulho, incentivo e recompensa para a criança.", img: "https://i.pinimg.com/736x/ed/00/af/ed00afed8dc5f9ea583f15b7797f09a7.jpg", oldPrice: "R$ 19,90" },
+    { title: "Grupo VIP de Suporte", text: "Troca de experiências com outros pais cristãos.", img: "https://i.pinimg.com/736x/29/0a/04/290a0442e95e30109e59e0a913663af1.jpg", oldPrice: "R$ 97,00" },
   ];
 
   return (
@@ -393,7 +393,7 @@ const Bonus = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {bonuses.map((bonus, i) => (
-            <div key={i} className="bg-[#FAFAF7] rounded-3xl p-6 border border-slate-100 flex flex-col items-center text-center">
+            <div key={i} className="bg-[#FAFAF7] rounded-3xl p-6 border border-slate-100 flex flex-col items-center text-center h-full">
               <div className="relative w-full aspect-square mb-6 overflow-hidden rounded-2xl shadow-md">
                 <img src={bonus.img} alt={bonus.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 <div className="absolute top-2 right-2 bg-orange-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
@@ -401,7 +401,12 @@ const Bonus = () => {
                 </div>
               </div>
               <h3 className="font-bold text-lg text-slate-800 mb-2">{bonus.title}</h3>
-              <p className="text-slate-600 text-sm">{bonus.text}</p>
+              <p className="text-slate-600 text-sm mb-6">{bonus.text}</p>
+              
+              <div className="mt-auto flex flex-col items-center bg-white w-full py-3 rounded-xl border border-slate-100 shadow-sm">
+                <span className="text-xs font-bold text-slate-400 line-through">De {bonus.oldPrice}</span>
+                <span className="text-lg font-black text-green-500 uppercase tracking-widest mt-0.5">GRÁTIS</span>
+              </div>
             </div>
           ))}
         </div>
@@ -500,7 +505,7 @@ const OfferSection = () => {
               </div>
               <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mb-8">Pagamento único • Acesso vitalício</p>
               
-              <CTAButton text="QUERO COMEÇAR AGORA" href="https://pay.wiapy.com/zm9woP1NAS" className="w-full text-base md:text-lg py-4 md:py-5" />
+              <CTAButton text="COMEÇAR AGORA" href="https://pay.wiapy.com/zm9woP1NAS" className="w-full text-lg md:text-xl !py-3 sm:!py-4 md:!py-5" />
               
               <div className="mt-8 flex flex-col gap-3 text-xs font-bold text-slate-500 bg-white p-4 rounded-2xl border border-slate-100">
                 <div className="flex items-center justify-center gap-2"><ShieldCheck className="w-4 h-4 text-green-500" /> Compra 100% segura</div>
