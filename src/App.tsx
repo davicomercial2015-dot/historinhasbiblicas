@@ -128,6 +128,7 @@ const MarqueeRow = ({ images, reverse = false }: { images: string[], reverse?: b
         className="flex gap-4 md:gap-6 min-w-max px-2 md:px-3 py-2"
         animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
         transition={{ ease: "linear", duration: 40, repeat: Infinity }}
+        style={{ willChange: "transform" }}
       >
         {[...images, ...images].map((img, i) => (
           <img 
@@ -136,6 +137,8 @@ const MarqueeRow = ({ images, reverse = false }: { images: string[], reverse?: b
             alt="Preview" 
             className="h-48 sm:h-64 md:h-80 w-auto rounded-2xl shadow-md border-2 border-slate-100 shrink-0" 
             referrerPolicy="no-referrer"
+            loading="lazy"
+            decoding="async"
           />
         ))}
       </motion.div>
@@ -254,6 +257,7 @@ const FullSizeCarousel = () => {
           className="flex gap-4 md:gap-8 min-w-max px-4 py-4 items-center"
           animate={{ x: ["0%", "-50%"] }}
           transition={{ ease: "linear", duration: 45, repeat: Infinity }}
+          style={{ willChange: "transform" }}
         >
           {[...images, ...images].map((img, i) => (
             <img 
@@ -262,6 +266,8 @@ const FullSizeCarousel = () => {
               alt="Conteúdo em tamanho real" 
               className="w-[85vw] md:w-auto h-auto md:max-h-[85vh] max-w-none shrink-0 rounded-2xl shadow-xl border border-slate-200" 
               referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
             />
           ))}
         </motion.div>
