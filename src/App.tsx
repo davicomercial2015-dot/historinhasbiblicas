@@ -504,20 +504,20 @@ const OfferSection = () => {
         
         <div className="bg-white rounded-3xl md:rounded-[3rem] shadow-2xl border-4 border-slate-100 overflow-hidden relative mt-12">
           <div className="absolute top-0 left-0 w-full h-3 bg-orange-500" />
-          <div className="p-6 sm:p-10 md:p-12 flex flex-col lg:flex-row gap-10 items-center">
+          <div className="p-4 sm:p-8 md:p-12 flex flex-col lg:flex-row gap-8 lg:gap-10 items-center">
             
             {/* Imagem + Inclusão */}
             <div className="flex-1 w-full flex flex-col items-center">
               <img 
                 src="https://i.pinimg.com/736x/2f/b4/8a/2fb48a9818f0dbcbb70a7843ae60644f.jpg" 
                 alt="Histórias Bíblicas" 
-                className="w-full max-w-[280px] md:max-w-sm rounded-[2rem] shadow-xl mb-8 border-4 border-slate-50"
+                className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-sm rounded-[2rem] shadow-xl mb-6 sm:mb-8 border-4 border-slate-50"
                 referrerPolicy="no-referrer"
               />
               <div className="w-full max-w-sm mx-auto">
-                <h3 className="text-2xl font-black text-slate-900 mb-1 text-center">Histórias Bíblicas</h3>
-                <p className="text-base font-medium text-slate-500 mb-6 text-center">Tudo pronto para você começar hoje mesmo.</p>
-                <ul className="space-y-4">
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-1 text-center">Histórias Bíblicas</h3>
+                <p className="text-sm sm:text-base font-medium text-slate-500 mb-6 text-center">Tudo pronto para você começar hoje mesmo.</p>
+                <ul className="space-y-3 sm:space-y-4">
                   {[
                     "Histórias bíblicas ilustradas em 3D",
                     "Roteiro de Perguntas Guiadas",
@@ -525,8 +525,8 @@ const OfferSection = () => {
                     "Certificado + Grupo VIP",
                     "Acesso Vitalício Completo"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100 font-bold text-slate-700 text-sm md:text-base">
-                      <CheckCircle2 className="w-6 h-6 text-green-500 shrink-0" />
+                    <li key={i} className="flex items-center gap-3 bg-slate-50 p-3 md:p-4 rounded-xl border border-slate-100 font-bold text-slate-700 text-xs sm:text-sm md:text-base">
+                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -535,33 +535,33 @@ const OfferSection = () => {
             </div>
 
             {/* Price Box */}
-            <div className="flex-1 w-full lg:max-w-md bg-slate-900 p-8 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden text-center text-white border-4 border-slate-800">
+            <div className="flex-1 w-full lg:max-w-md bg-slate-900 p-6 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden text-center text-white border-4 border-slate-800 mt-4 lg:mt-0">
               <div className="absolute top-0 right-0 w-40 h-40 bg-orange-500/20 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
               
-              <div className="inline-block bg-orange-500 text-white font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest mb-6">
+              <div className="inline-block bg-orange-500 text-white font-bold px-4 py-1.5 rounded-full text-[10px] sm:text-xs uppercase tracking-widest mb-6">
                 Oferta Especial
               </div>
               
-              <p className="text-slate-400 line-through text-xl font-bold mb-2">De R$67</p>
+              <p className="text-slate-400 line-through text-lg sm:text-xl font-bold mb-2">De R$67</p>
               
               <div className="flex items-center justify-center text-green-400 mb-1">
-                <span className="text-lg font-black uppercase tracking-wider">Por apenas</span>
+                <span className="text-base sm:text-lg font-black uppercase tracking-wider">Por apenas</span>
               </div>
               <div className="flex justify-center items-start text-green-400 mb-6">
-                <span className="text-2xl md:text-3xl font-black mt-2 md:mt-3 mr-1">R$</span>
-                <span className="text-[4.5rem] md:text-[5.5rem] font-black leading-none tracking-tighter">19</span>
-                <span className="text-2xl md:text-3xl font-black mt-2 md:mt-3">,90</span>
+                <span className="text-xl sm:text-2xl md:text-3xl font-black mt-1 sm:mt-2 md:mt-3 mr-1">R$</span>
+                <span className="text-[3.5rem] sm:text-[4.5rem] md:text-[5.5rem] font-black leading-none tracking-tighter">19</span>
+                <span className="text-xl sm:text-2xl md:text-3xl font-black mt-1 sm:mt-2 md:mt-3">,90</span>
               </div>
-              <p className="text-sm text-slate-300 font-bold uppercase tracking-widest mb-8">Pagamento único</p>
+              <p className="text-xs sm:text-sm text-slate-300 font-bold uppercase tracking-widest mb-8">Pagamento único</p>
               
               <CTAButton text="GARANTIR ACESSO" href="https://pay.wiapy.com/zm9woP1NAS" className="w-full shadow-[0_0_40px_rgba(34,197,94,0.3)] !py-3.5 md:!py-4 !text-base md:!text-lg" />
               
-              <div className="mt-5 text-sm font-medium text-slate-300">O acesso chegará no seu e-mail em menos de 2 minutos.</div>
+              <div className="mt-5 text-xs sm:text-sm font-medium text-slate-300">O acesso chegará no seu e-mail em menos de 2 minutos.</div>
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-xs font-bold text-slate-300">
-                <div className="flex items-center justify-center gap-2"><ShieldCheck className="w-5 h-5 text-green-400" /> Compra 100% segura</div>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center text-[10px] sm:text-xs font-bold text-slate-300">
+                <div className="flex items-center justify-center gap-2"><ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" /> Compra 100% segura</div>
                 <div className="hidden sm:block text-slate-600">•</div>
-                <div className="flex items-center justify-center gap-2"><Clock className="w-5 h-5 text-green-400" /> Acesso imediato</div>
+                <div className="flex items-center justify-center gap-2"><Clock className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" /> Acesso imediato</div>
               </div>
             </div>
 
@@ -569,21 +569,21 @@ const OfferSection = () => {
         </div>
 
         {/* Guarantee */}
-        <div className="mt-12 bg-white p-8 md:p-12 rounded-[3rem] border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-8 text-center md:text-left relative overflow-hidden">
+        <div className="mt-12 bg-white p-6 sm:p-8 md:p-12 rounded-3xl md:rounded-[3rem] border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-6 md:gap-8 text-center md:text-left relative overflow-hidden">
           <div className="absolute -right-12 -top-12 text-slate-50">
             <Shield className="w-80 h-80" />
           </div>
-          <div className="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center shrink-0 z-10 border-4 border-white shadow-lg">
-            <ShieldCheck className="w-12 h-12" />
+          <div className="w-20 h-20 sm:w-24 sm:h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center shrink-0 z-10 border-4 border-white shadow-lg">
+            <ShieldCheck className="w-10 h-10 sm:w-12 sm:h-12" />
           </div>
-          <div className="z-10">
-            <h3 className="text-3xl font-black text-slate-900 mb-4">Risco Zero. Teste na sua casa.</h3>
-            <p className="text-slate-600 leading-relaxed mb-6 font-medium text-lg">Baixe o material. Sente com seu filho. Leia a primeira história. Se ele não gostar, não prestar atenção ou se você achar que não facilitou a sua vida, eu devolvo 100% dos seus R$19,90. Você tem 7 dias de garantia incondicional.</p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-4">
-              <span className="bg-slate-50 px-5 py-2.5 rounded-full text-sm font-bold text-slate-700 flex items-center gap-2 border border-slate-200">
+          <div className="z-10 relative">
+            <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-4">Risco Zero. Teste na sua casa.</h3>
+            <p className="text-slate-600 leading-relaxed mb-6 font-medium text-sm sm:text-base md:text-lg">Baixe o material. Sente com seu filho. Leia a primeira história. Se ele não gostar, não prestar atenção ou se você achar que não facilitou a sua vida, eu devolvo 100% dos seus R$19,90. Você tem 7 dias de garantia incondicional.</p>
+            <div className="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
+              <span className="bg-slate-50 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold text-slate-700 flex items-center gap-2 border border-slate-200">
                 <Check className="w-4 h-4 text-green-500" /> Decisão segura
               </span>
-              <span className="bg-slate-50 px-5 py-2.5 rounded-full text-sm font-bold text-slate-700 flex items-center gap-2 border border-slate-200">
+              <span className="bg-slate-50 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold text-slate-700 flex items-center gap-2 border border-slate-200">
                 <Check className="w-4 h-4 text-green-500" /> Reembolso fácil
               </span>
             </div>
