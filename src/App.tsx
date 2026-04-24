@@ -81,9 +81,7 @@ const Hero = () => (
         transition={{ delay: 0.3 }}
         className="relative mb-12 sm:mb-16 w-full max-w-2xl px-2 sm:px-0"
       >
-        <div className="absolute -top-4 -left-4 bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transform -rotate-6 shadow-lg z-10 text-sm">
-          Material Completo
-        </div>
+
         <img 
           src="https://i.pinimg.com/736x/ae/fd/cd/aefdcd3766de065284eec5bb4ca77288.jpg" 
           alt="Material Completo Histórias Bíblicas" 
