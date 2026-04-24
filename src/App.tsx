@@ -99,7 +99,7 @@ const Hero = () => (
       </motion.div>
       
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="flex flex-col items-center w-full max-w-md mx-auto">
-        <CTAButton text="QUERO PROTEGER MEU FILHO AGORA" className="w-full" />
+        <CTAButton text="QUERO PROTEGER MEU FILHO AGORA" href="#qualificacao" className="w-full" />
         <p className="mt-3 text-sm text-slate-500 font-medium italic">Comece hoje mesmo, sem complicação.</p>
         
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] sm:text-xs text-slate-500 font-semibold w-full">
@@ -116,7 +116,7 @@ const Hero = () => (
 
 // --- 2. Pain Section ---
 const PainSection = () => (
-  <section className="py-20 md:py-28 bg-white px-4">
+  <section id="qualificacao" className="py-20 md:py-28 bg-white px-4">
     <div className="max-w-3xl mx-auto">
       <SectionHeading title="A rotina engole suas intenções todos os dias, não é?" />
       <div className="space-y-6 text-lg md:text-xl text-slate-600 font-medium leading-relaxed bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm">
@@ -159,7 +159,7 @@ const SolutionSection = () => (
         <p>O Histórias Bíblicas é um material pronto para ajudar mães cristãs a viverem momentos de fé, conversa e conexão com os filhos dentro de casa.</p>
         <p>É só abrir, ler, conversar e viver esse momento.</p>
       </div>
-      <CTAButton text="QUERO ESSA PRATICIDADE" />
+      <CTAButton text="QUERO ESSA PRATICIDADE" href="#pratica" />
     </div>
   </section>
 );
@@ -187,7 +187,7 @@ const PreviewCarousel1 = () => {
   ];
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section id="pratica" className="py-24 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 mb-12">
         <SectionHeading 
           title="Veja por dentro do material" 
