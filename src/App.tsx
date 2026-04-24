@@ -556,7 +556,7 @@ const OfferSection = () => {
               </div>
               <p className="text-sm text-slate-300 font-bold uppercase tracking-widest mb-8">Pagamento único</p>
               
-              <CTAButton text="QUERO GARANTIR MEU ACESSO" href="https://pay.wiapy.com/zm9woP1NAS" className="w-full text-lg shadow-[0_0_40px_rgba(34,197,94,0.3)] !py-5" />
+              <CTAButton text="GARANTIR ACESSO" href="https://pay.wiapy.com/zm9woP1NAS" className="w-full shadow-[0_0_40px_rgba(34,197,94,0.3)] !py-3.5 md:!py-4 !text-base md:!text-lg" />
               
               <div className="mt-5 text-sm font-medium text-slate-300">O acesso chegará no seu e-mail em menos de 2 minutos.</div>
 
@@ -639,38 +639,6 @@ const FAQ = () => {
   );
 };
 
-// --- 13. Sticky Mobile CTA ---
-const StickyCTA = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 800) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div 
-          initial={{ y: 100 }} 
-          animate={{ y: 0 }} 
-          exit={{ y: 100 }}
-          className="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 p-4 z-40 md:hidden flex justify-center shadow-[0_-10px_30px_rgba(0,0,0,0.1)]"
-        >
-          <CTAButton text="SIM, QUERO ENSINAR MEU FILHO" className="w-full py-4 text-[15px] !rounded-xl" />
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-};
-
 // --- 14. Final CTA ---
 const FinalCTA = () => (
   <section className="py-24 md:py-32 bg-slate-900 relative overflow-hidden px-4">
@@ -726,7 +694,7 @@ export default function App() {
       <FAQ />
       <FinalCTA />
       <Footer />
-      <StickyCTA />
+
     </div>
   );
 }
