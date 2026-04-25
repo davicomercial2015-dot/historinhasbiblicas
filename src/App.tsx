@@ -90,7 +90,7 @@ const Hero = () => (
         {/* Price Tag Hero */}
         <div className="absolute -bottom-4 right-0 sm:-bottom-6 sm:-right-6 bg-slate-900 text-white p-3 sm:p-5 rounded-xl sm:rounded-2xl shadow-xl transform sm:rotate-3 border-2 sm:border-4 border-[#FAFAF7] z-10">
           <p className="text-[10px] sm:text-xs text-slate-400 font-bold line-through mb-1 text-center">De R$67</p>
-          <p className="font-black text-xl sm:text-2xl text-green-400 leading-none">R$9,90</p
+          <p className="font-black text-xl sm:text-2xl text-green-400 leading-none">R$9,90</p>
         </div>
       </motion.div>
       
