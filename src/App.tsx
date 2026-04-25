@@ -44,7 +44,7 @@ const UrgencyHeader = () => (
   <div className="fixed top-0 left-0 w-full bg-red-600 text-white text-[10px] md:text-xs lg:text-sm font-bold text-center py-2.5 z-50 shadow-md">
     <div className="flex items-center justify-center gap-2 max-w-7xl mx-auto px-4">
       <Clock className="w-4 h-4 animate-pulse shrink-0" />
-      <span className="tracking-wide uppercase">ÚLTIMAS HORAS DA OFERTA: LEVE TODO O MATERIAL POR APENAS <span className="text-yellow-300 font-black">R$19,90</span></span>
+      <span className="tracking-wide uppercase">ÚLTIMAS HORAS DA OFERTA: LEVE TODO O MATERIAL POR APENAS <span className="text-yellow-300 font-black">R$9,90</span></span>
     </div>
   </div>
 );
@@ -90,7 +90,7 @@ const Hero = () => (
         {/* Price Tag Hero */}
         <div className="absolute -bottom-4 right-0 sm:-bottom-6 sm:-right-6 bg-slate-900 text-white p-3 sm:p-5 rounded-xl sm:rounded-2xl shadow-xl transform sm:rotate-3 border-2 sm:border-4 border-[#FAFAF7] z-10">
           <p className="text-[10px] sm:text-xs text-slate-400 font-bold line-through mb-1 text-center">De R$67</p>
-          <p className="font-black text-xl sm:text-2xl text-green-400 leading-none">R$19,90</p>
+          <p className="font-black text-xl sm:text-2xl text-green-400 leading-none">R$9,90</p
         </div>
       </motion.div>
       
@@ -407,7 +407,7 @@ const Bonus = () => {
   const bonuses = [
     { title: "Desenhos Bíblicos para Colorir", text: "Mais criatividade e envolvimento enquanto seu filho aprende.", img: "https://i.pinimg.com/736x/af/70/b3/af70b37bb79dda24ec11496391e9c167.jpg", oldPrice: "De R$29,90" },
     { title: "Guia de Leitura em Família", text: "Um roteiro simples para manter constância e criar o hábito bíblico em casa.", img: "https://i.pinimg.com/736x/00/82/b2/0082b27088df4a1a15aa3273854dadea.jpg", oldPrice: "De R$47,00" },
-    { title: "Certificado de Conclusão", text: "Para seu filho sentir orgulho da jornada de fé que está vivendo.", img: "https://i.pinimg.com/736x/ed/00/af/ed00afed8dc5f9ea583f15b7797f09a7.jpg", oldPrice: "De R$19,90" },
+    { title: "Certificado de Conclusão", text: "Para seu filho sentir orgulho da jornada de fé que está vivendo.", img: "https://i.pinimg.com/736x/ed/00/af/ed00afed8dc5f9ea583f15b7797f09a7.jpg", oldPrice: "De R$9,90" },
     { title: "Grupo VIP de Mães", text: "Um espaço para troca, apoio e incentivo com outras mães no mesmo propósito.", img: "https://i.pinimg.com/736x/29/0a/04/290a0442e95e30109e59e0a913663af1.jpg", oldPrice: "De R$97,00" },
   ];
 
@@ -525,7 +525,7 @@ const OfferSection = () => {
       <div className="max-w-5xl mx-auto">
         <SectionHeading 
           title="Comece hoje a ensinar valores bíblicos ao seu filho" 
-          subtitle="Por apenas R$19,90, você leva um material completo, visual e pronto para criar momentos bíblicos em família."
+          subtitle="Por apenas R$9,90, você leva um material completo, visual e pronto para criar momentos bíblicos em família."
         />
         
         <div id="oferta" className="max-w-xl mx-auto bg-slate-900 rounded-3xl md:rounded-[3rem] shadow-[0_0_60px_rgba(34,197,94,0.35)] border-2 border-green-500/50 overflow-hidden relative mt-8 md:mt-12 scroll-mt-10 md:scroll-mt-11 p-6 pt-14 sm:p-8 sm:pt-16 md:p-12 md:pt-20 text-center text-white">
