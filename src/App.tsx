@@ -18,7 +18,7 @@ import {
   PlayCircle,
   Check
 } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // --- Base Components ---
 const SectionHeading = ({ title, subtitle, light = false }: { title: React.ReactNode, subtitle?: string, light?: boolean }) => (
@@ -499,79 +499,95 @@ const Testimonials = () => {
 };
 
 // --- 12 & 13. Oferta & Garantia ---
+const CardCountdown = () => {
+  const [timeLeft, setTimeLeft] = useState(7 * 60 + 49);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prev => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+
+  return (
+    <div className="absolute top-0 left-0 w-full bg-red-600 text-white py-2 text-center text-[10px] sm:text-xs font-bold shadow-md z-20 uppercase tracking-wide">
+      A OFERTA ACABA EM: <span className="text-yellow-300 ml-1 font-black">{minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}</span>
+    </div>
+  );
+};
+
 const OfferSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-[#FAFAF7] px-4" id="oferta">
+    <section className="py-16 md:py-24 bg-[#FAFAF7] px-4">
       <div className="max-w-5xl mx-auto">
         <SectionHeading 
           title="Comece hoje a ensinar valores bíblicos ao seu filho" 
           subtitle="Por apenas R$19,90, você leva um material completo, visual e pronto para criar momentos bíblicos em família."
         />
         
-        <div className="bg-white rounded-3xl md:rounded-[3rem] shadow-2xl border-4 border-slate-100 overflow-hidden relative mt-8 md:mt-12">
-          <div className="absolute top-0 left-0 w-full h-3 bg-orange-500" />
-          <div className="p-5 sm:p-8 md:p-12 flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-10 items-center">
+        <div id="oferta" className="max-w-xl mx-auto bg-slate-900 rounded-3xl md:rounded-[3rem] shadow-[0_0_60px_rgba(34,197,94,0.35)] border-2 border-green-500/50 overflow-hidden relative mt-8 md:mt-12 scroll-mt-24 md:scroll-mt-28 p-6 pt-14 sm:p-8 sm:pt-16 md:p-12 md:pt-20 text-center text-white">
+          <CardCountdown />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl -ml-32 -mb-32 pointer-events-none" />
+          
+          <div className="relative z-10 flex flex-col items-center">
             
-            {/* Imagem + Inclusão */}
-            <div className="flex-1 w-full flex flex-col items-center">
-              <img 
-                src="https://i.pinimg.com/736x/2f/b4/8a/2fb48a9818f0dbcbb70a7843ae60644f.jpg" 
-                alt="Histórias Bíblicas para Crianças" 
-                className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-sm rounded-[2rem] shadow-xl mb-6 sm:mb-8 border-4 border-slate-50"
-                referrerPolicy="no-referrer"
-              />
-              <div className="w-full max-w-sm mx-auto">
-                <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-6 text-center">Histórias Bíblicas para Crianças</h3>
-                <ul className="space-y-3 sm:space-y-4">
-                  {[
-                    "Histórias bíblicas ilustradas em 3D",
-                    "Perguntas guiadas para os pais",
-                    "Atividades práticas",
-                    "Desenhos para colorir",
-                    "Guia de leitura em família",
-                    "Certificado de conclusão",
-                    "Grupo VIP de mães",
-                    "Acesso vitalício"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 bg-slate-50 p-3 md:p-4 rounded-xl border border-slate-100 font-bold text-slate-700 text-xs sm:text-sm md:text-base">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+            <img 
+              src="https://i.pinimg.com/736x/2f/b4/8a/2fb48a9818f0dbcbb70a7843ae60644f.jpg" 
+              alt="Histórias Bíblicas para Crianças" 
+              className="w-full max-w-[320px] sm:max-w-[400px] md:max-w-[480px] mb-6 md:mb-8 rounded-[2rem] shadow-xl hover:scale-105 transition-transform duration-500"
+              referrerPolicy="no-referrer"
+            />
+            
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-6 md:mb-8 tracking-tight">Histórias Bíblicas para Crianças</h3>
+            
+            <p className="text-slate-400 line-through text-lg sm:text-xl font-bold mb-1">De R$67</p>
+            
+            <div className="flex items-center justify-center text-green-400 mb-1">
+              <span className="text-base sm:text-lg font-black uppercase tracking-wider">Por apenas</span>
+            </div>
+            <div className="flex justify-center items-start text-green-400 mb-6 sm:mb-8">
+              <span className="text-xl sm:text-3xl font-black mt-1 sm:mt-2 mr-1">R$</span>
+              <span className="text-6xl sm:text-[6.5rem] font-black leading-none tracking-tighter drop-shadow-lg">19</span>
+              <span className="text-xl sm:text-3xl font-black mt-1 sm:mt-2">,90</span>
+            </div>
+            
+            <div className="w-full max-w-sm sm:max-w-md mx-auto mb-8 md:mb-10">
+              <CTAButton text="GARANTIR ACESSO" href="https://pay.wiapy.com/zm9woP1NAS" className="w-full shadow-[0_0_40px_rgba(34,197,94,0.3)] !py-4 sm:!py-5 !text-base sm:!text-xl" />
+
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 gap-y-2 text-[10px] sm:text-xs font-bold text-slate-300">
+                <span className="flex items-center gap-1.5"><Smartphone className="w-3.5 h-3.5 text-green-400 shrink-0" /> Pagamento único</span>
+                <span className="text-slate-600 hidden sm:inline-block">•</span>
+                <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-green-400 shrink-0" /> Acesso imediato</span>
+                <span className="text-slate-600 hidden sm:inline-block">•</span>
+                <span className="flex items-center gap-1.5"><BookOpen className="w-3.5 h-3.5 text-green-400 shrink-0" /> Material digital</span>
               </div>
             </div>
 
-            {/* Price Box */}
-            <div className="flex-1 w-full lg:max-w-md bg-slate-900 p-5 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden text-center text-white border-4 border-slate-800 mt-4 lg:mt-0">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-orange-500/20 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
-              
-              <div className="inline-block bg-orange-500 text-white font-bold px-4 py-1.5 rounded-full text-[10px] sm:text-xs uppercase tracking-widest mb-4 sm:mb-6">
-                Oferta Especial
-              </div>
-              
-              <p className="text-slate-400 line-through text-base sm:text-xl font-bold mb-1 sm:mb-2">De R$67</p>
-              
-              <div className="flex items-center justify-center text-green-400 mb-1">
-                <span className="text-sm sm:text-lg font-black uppercase tracking-wider">Por apenas</span>
-              </div>
-              <div className="flex justify-center items-start text-green-400 mb-5 sm:mb-6">
-                <span className="text-lg sm:text-3xl font-black mt-1 sm:mt-2 mr-1">R$</span>
-                <span className="text-5xl sm:text-[5.5rem] font-black leading-none tracking-tighter">19</span>
-                <span className="text-lg sm:text-3xl font-black mt-1 sm:mt-2">,90</span>
-              </div>
-              
-              <CTAButton text="GARANTIR ACESSO" href="https://pay.wiapy.com/zm9woP1NAS" className="w-full shadow-[0_0_40px_rgba(34,197,94,0.3)] !py-3.5 sm:!py-4 !text-sm sm:!text-lg" />
-              
-              <div className="mt-4 md:mt-5 text-[11px] sm:text-sm font-medium text-slate-300">Acesso imediato após a compra</div>
+            <div className="w-full h-px bg-slate-800 mb-8 md:mb-10" />
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center text-[10px] sm:text-xs font-bold text-slate-300">
-                <div className="flex items-center justify-center gap-2"><Smartphone className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" /> Pagamento único</div>
-                <div className="hidden sm:block text-slate-600">•</div>
-                <div className="flex items-center justify-center gap-2"><Clock className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" /> Acesso imediato</div>
-                <div className="hidden sm:block text-slate-600">•</div>
-                <div className="flex items-center justify-center gap-2"><BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" /> Material digital</div>
-              </div>
+            <div className="w-full max-w-sm mx-auto text-left">
+              <p className="text-slate-400 font-bold mb-5 text-center text-xs sm:text-sm tracking-widest uppercase">O que você vai receber:</p>
+              <ul className="space-y-3 sm:space-y-4">
+                {[
+                  "Histórias bíblicas ilustradas em 3D",
+                  "Perguntas guiadas para os pais",
+                  "Atividades práticas",
+                  "Desenhos para colorir",
+                  "Guia de leitura em família",
+                  "Certificado de conclusão",
+                  "Grupo VIP de mães",
+                  "Acesso vitalício"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 bg-white/5 p-3 md:p-4 rounded-xl border border-white/10 font-bold text-slate-200 text-xs sm:text-sm md:text-base hover:bg-white/10 transition-colors">
+                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
 
           </div>
