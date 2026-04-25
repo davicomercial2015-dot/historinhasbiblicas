@@ -528,7 +528,7 @@ const OfferSection = () => {
           subtitle="Por apenas R$19,90, você leva um material completo, visual e pronto para criar momentos bíblicos em família."
         />
         
-        <div id="oferta" className="max-w-xl mx-auto bg-slate-900 rounded-3xl md:rounded-[3rem] shadow-[0_0_60px_rgba(34,197,94,0.35)] border-2 border-green-500/50 overflow-hidden relative mt-8 md:mt-12 scroll-mt-24 md:scroll-mt-28 p-6 pt-14 sm:p-8 sm:pt-16 md:p-12 md:pt-20 text-center text-white">
+        <div id="oferta" className="max-w-xl mx-auto bg-slate-900 rounded-3xl md:rounded-[3rem] shadow-[0_0_60px_rgba(34,197,94,0.35)] border-2 border-green-500/50 overflow-hidden relative mt-8 md:mt-12 scroll-mt-10 md:scroll-mt-11 p-6 pt-14 sm:p-8 sm:pt-16 md:p-12 md:pt-20 text-center text-white">
           <CardCountdown />
           <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl -ml-32 -mb-32 pointer-events-none" />
