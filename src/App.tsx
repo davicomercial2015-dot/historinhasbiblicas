@@ -542,7 +542,7 @@ const OfferSection = () => {
               referrerPolicy="no-referrer"
             />
             
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-6 md:mb-8 tracking-tight">Histórias Bíblicas para Crianças</h3>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-6 md:mb-8 tracking-tight">Material completo para ensinar valores bíblicos ao seu filho</h3>
             
             <p className="text-slate-400 line-through text-lg sm:text-xl font-bold mb-1">De R$67</p>
             
