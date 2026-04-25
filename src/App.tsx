@@ -551,7 +551,7 @@ const OfferSection = () => {
             </div>
             <div className="flex justify-center items-start text-green-400 mb-6 sm:mb-8">
               <span className="text-xl sm:text-3xl font-black mt-1 sm:mt-2 mr-1">R$</span>
-              <span className="text-6xl sm:text-[6.5rem] font-black leading-none tracking-tighter drop-shadow-lg">19</span>
+              <span className="text-6xl sm:text-[6.5rem] font-black leading-none tracking-tighter drop-shadow-lg">9</span>
               <span className="text-xl sm:text-3xl font-black mt-1 sm:mt-2">,90</span>
             </div>
             
